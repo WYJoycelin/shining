@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shining Hotel - Reservation</title>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var checkInInput = document.getElementById("check-in");
+      var checkOutInput = document.getElementById("check-out");
+
+      checkInInput.addEventListener("change", function() {
+        checkOutInput.min = checkInInput.value;
+      });
+    });
+  </script>
+</head>
+<body>
+
+  <header>
+    <h1><a href="index.html">Shining Hotel</a></h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="2rooms.html">Rooms</a></li>
+        <li><a href="3facilities.html">Facilities</a></li>
+        <li><a href="4reservation.html">Reservation</a></li>
+        <li><a href="5contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="reservation" class="reservation">
+    <h2>Reservation</h2>
+    <p>Book your stay with us!</p>
+    <p>每個房間最多上限入住兩人，若有多人入住則需<b>分次預訂不同房間</b>，如有其他特殊需求請聯絡客服，謝謝您!</p>
+    <form action="http://192.168.1.57/submit_reservation.php" method="post">      
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+    
+      <label for="contact-phone">Contact Phone:</label>
+      <input type="tel" id="contact-phone" name="contact-phone" required>
+    
+      <label for="email">E-MAIL:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="check-in">Check-in Date:</label>
+      <input type="date" id="check-in" name="check-in" required>
+
+      <label for="check-out">Check-out Date:</label>
+      <input type="date" id="check-out" name="check-out" required>
+
+      <label for="guests">Number of Guests (each time up to 2):</label>
+      <input type="number" id="guests" name="guests" min="1" max="2" required>
+
+      <label for="room-number">Select Room:</label>
+      <select id="room-number" name="room-number" required>
+        <option value="301">301</option>
+        <option value="302">302</option>
+        <option value="303">303</option>
+        <option value="304">304</option>
+        <option value="305">305</option>
+      </select>
+
+      <button type="submit" class="btn">Submit Reservation</button>
+    </form>
+  </section>
+
+  <section id="contact" class="contact">
+    <p>Service time: Mon-Fri 09:00-17:00</p>
+    <p>客服電話：(02)2905-3030</p>
+    <p>shininghotel@gmail.com</p>
+    <p><address>地址　|　台南市安平區漁光路 119 巷 1 號</address></p>
+    <p><address> No.1, Ln. 119, Yuguang Rd., Anping Dist., Tainan City 708</address></p>
+
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Shining Hotel. All rights reserved.</p>
+    <p>Designed by Wu Yu Ju.</p>
+  </footer>
+
+</body>
+</html>
