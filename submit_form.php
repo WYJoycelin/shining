@@ -1,6 +1,6 @@
 <?php
 // 建立與資料庫的連線
-$conn = new mysqli("192.168.1.57", "user", "12345", "hotel_db");
+$conn = new mysqli("localhost", "user", "12345", "hotel_db");
 
 // 檢查連線是否成功
 if ($conn->connect_error) {
